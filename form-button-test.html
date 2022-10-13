@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+
+    <style>
+      body{
+        font-family:poppins;
+        background: #e0e5ec;
+      }   
+      .form_title{
+        color: #9baacf;
+        font-size: 28px;
+        font-weight: 600;
+        text-decoration:underline;
+        margin-bottom: 50px;
+            letter-spacing: 4px;
+        font-style: italic;
+      }
+      .input_group{
+        min-height:140px;
+        margin-bottom: 10px;
+        position: relative;
+      }
+      .input_group.sm{
+        min-height:120px;
+      }
+      .input_group.unset{
+        min-height:unset;
+      }
+      .input_group .iconWrap{
+        position: relative;
+      }
+      .input_group label.input_field{
+        font-size: 18px;
+        color: #9baacf;
+        font-weight: 600;
+        margin-bottom: 10px;
+        letter-spacing:1px;
+      }
+      .input_group label.error{
+        color: #ff0000;
+        position: absolute;
+        bottom:5px;
+        font-size: 14px;
+      }
+      .input_group .iconWrap label.error{                
+        top:110%;
+      }
+      .input_group .form__input {
+        display: block;
+        width: 100%;
+        height:50px;
+        border: none;
+        border-radius: 12px;
+        font-size:18px;
+        padding-left: 15px;
+        box-shadow: inset 0.2rem 0.2rem 0.5rem #c8d0e7, inset -0.2rem -0.2rem 0.5rem #FFFFFF;
+        background: none;
+        font-family: inherit;
+        color: #9baacf;
+      }
+      .input_group .iconWrap i{
+        position: absolute;
+        right: 15px;
+        top:50%;
+        transform:translateY(-50%);
+        font-size: 18px;  
+        color: #9baacf;
+        cursor: pointer;      
+      }
+
+      .input_group .form__input:focus{
+        outline: none;
+        box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #FFFFFF;
+      }
+      .custom-btn,
+      .custom-btn:hover {
+        width: 130px;
+        height: 40px;
+        border: none;
+        color: #000;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-size: 18px;        
+        font-weight: 500;
+        background: rgba(255,255,255,0.2);
+        cursor: pointer;
+        transition: all 0.1s linear;        
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+         7px 7px 20px 0px rgba(0,0,0,.1),
+         4px 4px 5px 0px rgba(0,0,0,.1);
+        outline: none;
+        line-height:1;
+        font-weight: 600;  
+        z-index:9999999999 !important;      
+      }
+      .custom-btn:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        direction: rtl;
+        z-index: -1;
+        box-shadow:
+         -7px -7px 20px 0px #fff9,
+         -4px -4px 5px 0px #fff9,
+         7px 7px 20px 0px #0002,
+         4px 4px 5px 0px #0001;
+        transition: all 0.3s ease;
+      }
+      .custom-btn:hover {
+        color: #000;
+      }
+      .custom-btn:hover:after {
+        left: auto;
+        right: 0;
+        width: 100%;
+      }
+      .custom-btn:active {
+        top: 2px;
+      }
+    </style>
+  </head>
+  <body> 
+    <div class="container">
+      <div class="row justify-content-center mt-3 pt-md-5">
+        <div class="col-10 col-md-5">
+          <form class="position-relative" id="myform"> 
+            <h1 class="form_title text-center">Magic Form</h1>
+            <div class="input_group sm">
+              <label for="fname_id" class="input_field">Name</label>              
+              <input type="text" class="form__input" id="fname_id" name="fname">                            
+              <div class="form-text">&nbsp;</div>
+            </div>
+            <div class="input_group">
+              <label for="email_id" class="input_field">Email address</label>
+              <input type="email" class="form__input" id="email_id" name="email">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div> 
+            <div class="input_group sm">
+              <label for="password_id" class="input_field">Password</label>
+              <div class="iconWrap">
+                <input type="password" class="form__input" id="password_id" name="password">
+                <i class="fa fa-eye viewIcon" aria-hidden="true"></i>              
+              </div>
+              <div class="form-text">&nbsp;</div>
+            </div>
+            <div class="input_group sm">
+              <label for="retype_password" class="input_field">Retype Password</label>
+              <div class="iconWrap">
+                <input type="password" class="form__input" id="retype_password" name="password_again">
+                <i class="fa fa-eye viewIcon" aria-hidden="true"></i>              
+              </div>
+              <div class="form-text">&nbsp;</div>
+            </div>
+            <div id="submit_btn_bg">
+              <button type="submit" class="btn btn-primary position-relative custom-btn mt-4" submit='false' id="submit_btn">Submit</button>
+            </div>           
+            <!-- <button type="submit" class="btn custom-btn position-absolute mt-4" submit='false' id="submit_btn">Submit</button> -->           
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/c2c3cd1290.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $("#myform").validate({
+          rules: {
+            fname: {
+              required: {
+                depends:function(){
+                  $(this).val($.trim($(this).val()));
+                  return true;
+                }
+              },  
+              minlength: 3,         
+            }, 
+            email: {
+              required: {
+                depends:function(){
+                  $(this).val($.trim($(this).val()));
+                  return true;
+                }
+              }, 
+              email: true,                        
+            },                       
+            password: {
+              required: {
+                depends:function(){
+                  $(this).val($.trim($(this).val()));
+                  return true;
+                }
+              },              
+              pwcheck: true,
+              minlength: 8            
+            },
+            password_again: {
+              equalTo: "#password_id",
+              required: {
+                depends:function(){
+                  $(this).val($.trim($(this).val()));
+                  return true;
+                }
+              },
+            },
+          },
+          messages: {
+            fname: {
+              required: "Enter your name."                        
+            },
+            email: {
+              required: "Enter your email.",
+              email: "Enter your valid email address."              
+            }, 
+            password: {
+              required: "Enter your password",
+              pwcheck: "minlength-8, 1-lowercase, 1-uppercase, 1-digit"              
+            },           
+          },
+        });
+
+        $.validator.addMethod("pwcheck", function(value, element, param) {
+          if (this.optional(element)) {
+            return true;
+          } else if (!/[A-Z]/.test(value)) {
+            return false;
+          } else if (!/[a-z]/.test(value)) {
+            return false;
+          } else if (!/[0-9]/.test(value)) {
+            return false;
+          }
+          return true;
+        },"error msg here");
+        
+        $(document).on('click','.viewIcon',function (){
+          var passInput = $(this).siblings('input');
+          if(passInput.attr('type') === 'password'){
+            passInput.attr('type','text');
+            $(this).addClass('fa-eye-slash')
+          }else{
+            passInput.attr('type','password');
+            $(this).removeClass('fa-eye-slash')
+          }
+        })
+      });          
+
+      $(document).on('click','#submit_btn[submit="true"]',function (){
+        event.preventDefault();        
+        if($("#myform").valid()) {
+          alert('Login Success');
+          location.reload();            
+        }
+      });
+
+      $(document).on('mouseover','#submit_btn_bg',function (){      
+        validate_check(); 
+        if ( $('#submit_btn').attr('submit') == 'false' ){          
+          $(this).css({            
+            'top': Math.random() * $('#myform').innerHeight() + "px",
+            'left': Math.random() * $('#myform').innerWidth() + "px"
+          });
+        }        
+      })
+
+      function validate_check() {
+        if($("#myform").valid()) {      
+          $('#submit_btn_bg').removeClass('position-absolute');
+          $('#submit_btn_bg').css({'padding':"0px"});
+          $('#submit_btn').attr('submit','true');
+        }else{
+          $('#submit_btn_bg').addClass('position-absolute');
+          $('#submit_btn_bg').css({'padding':"50px 80px"});
+          $('#submit_btn').attr('submit','false');          
+        }
+      }
+    </script>
+  </body>
+</html>
